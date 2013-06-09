@@ -1,0 +1,1 @@
+class makewhatis-koji {}
