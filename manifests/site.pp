@@ -75,7 +75,7 @@ node 'koji.makewhatis.com' {
     password => 'password',
     require     => Postgresql::Role['koji'],
   }
-  postgresql::database_user{'koji': 
+  postgresql::database_user {'koji': 
     password_hash => postgresql_password('koji', 'password'),
     require   => Class['Postgresql::Server']
   }
@@ -96,8 +96,8 @@ node 'koji.makewhatis.com' {
   #}
   class {'koji::web':
     auth          => 'ssl',
-    clientca_crt  => 'puppet:///makewhatis-koji/koji_ca_cert.crt',
-    serverca_crt  => 'puppet:///makewhatis-koji/koji_ca_cert.crt', 
-    kojiweb_pem   => 'puppet:///makewhatis-koji/kojiweb.pem',
+    clientca_crt  => 'puppet:///files/koji_ca_cert.crt',
+    serverca_crt  => 'puppet:///files/koji_ca_cert.crt', 
+    kojiweb_pem   => 'puppet:///files/kojiweb.pem',
   }
 }

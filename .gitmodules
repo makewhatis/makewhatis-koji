@@ -13,3 +13,6 @@
 [submodule "modules/koji"]
 	path = modules/koji
 	url = git://github.com/makewhatis/puppet-koji.git
+[submodule "modules/concat"]
+	path = modules/concat
+	url = git://github.com/ripienaar/puppet-concat.git
