@@ -13,7 +13,7 @@ Vagrant::Config.run do |config|
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
     puppet.manifest_file = "site.pp"
-    puppet.options = ["--fileserverconfig=/vagrant/fileserver.conf"]
+    puppet.options = ["--verbose --fileserverconfig=/vagrant/fileserver.conf"]
     puppet.module_path = "modules"
   end
 
